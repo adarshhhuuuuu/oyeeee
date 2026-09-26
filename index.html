@@ -1,0 +1,46 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For Greeshma ❤️</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fff6fa;color:#542b3a;font-family:Arial,sans-serif}
+section{min-height:100vh;display:none;place-items:center;padding:24px}.active{display:grid}
+.card{max-width:700px;width:100%;padding:42px 26px;text-align:center;background:#ffffffea;border:1px solid #f2dbe4;border-radius:30px;box-shadow:0 20px 70px #9b52732b}
+h1,h2{font-family:Georgia,serif}h1{font-size:clamp(44px,10vw,76px);margin:10px 0}h2{font-size:clamp(30px,7vw,48px)}
+p{font-size:17px;line-height:1.8}.flower{font-size:45px}.kicker{text-transform:uppercase;letter-spacing:3px;font-size:11px;color:#b15475}
+button{border:0;border-radius:999px;padding:14px 22px;margin:7px;font-weight:bold;cursor:pointer}.primary{background:#d65c84;color:white}.secondary{background:#ffedf4;color:#963e60}
+.kisszone{height:230px;border-radius:24px;background:#fff1f6;display:grid;place-items:center;position:relative;overflow:hidden;margin:22px 0;font-size:55px}
+.kiss{position:absolute;font-size:30px;animation:up 2.5s forwards}@keyframes up{to{transform:translateY(-180px) rotate(15deg);opacity:0}}
+.quote{font-family:Georgia,serif;font-size:25px}.final{background:#fff8ed}.note{font-size:13px;color:#996879}
+</style></head><body>
+<audio id="song" preload="auto" loop><source src="song.mp3" type="audio/mpeg"></audio>
+
+<section id="s1" class="active"><div class="card"><div class="flower">🌷</div><div class="kicker">A little place made only for you</div>
+<h1>Greeshma ❤️</h1><p>Come here for a minute.<br>You don't have to be strong here.</p>
+<button class="primary" onclick="enter()">Open this with me ✨</button><div class="note">🎵 Our song starts when you enter.</div></div></section>
+
+<section id="s2"><div class="card"><div class="flower">🫂</div><div class="kicker">No fixing. Just loving.</div>
+<h2>You don't have to hide your scars.</h2><p>I know life has left some scars on your heart. I can't go back and change what happened.</p>
+<p>But I can hold you a little tighter today. I can listen when you need someone. I can be gentle with the parts of you that hurt.</p>
+<p class="quote">“I can't erase your scars…<br>but I can kiss every one of them with love.” 💋</p>
+<button class="primary" onclick="go(3)">One more thing… 🌷</button></div></section>
+
+<section id="s3"><div class="card"><div class="flower">💋</div><div class="kicker">A thousand little kisses</div>
+<h2>Kiss the scars 💋</h2><p>Tap the button. These are for every moment you had to be strong.</p>
+<div class="kisszone" id="zone">🫂</div><button class="primary" onclick="kiss()">Kiss her scars 💋</button>
+<button class="secondary" onclick="go(4)">I have something to tell you ❤️</button></div></section>
+
+<section id="s4" class="final"><div class="card"><div class="flower">🌸</div><div class="kicker">Just for you, Greeshma</div>
+<h2>My promise isn't forever.</h2><p>I don't know where life will take us, and I don't want to make promises about forever just because they sound beautiful.</p>
+<p>But I can promise you this:</p><p class="quote"><b>As long as I'm with you,<br>you will feel loved. ❤️</b></p>
+<p>Every day we're together, I'll try to make you feel wanted, valued, respected and special.</p>
+<p>You don't need to become someone else to deserve love. You already deserve it.</p>
+<p><b>For however long I'm lucky enough to walk beside you, I'll make sure you feel loved. 🫂❤️</b></p>
+<p>Now come here…<br>one hug + unlimited kisses. 💋🌷</p>
+<button class="primary" onclick="go(1)">Read it again ❤️</button></div></section>
+
+<script>
+const ss=[...document.querySelectorAll("section")],song=document.getElementById("song");
+function enter(){song.volume=.75;song.play().catch(()=>{});go(2)}
+function go(n){ss.forEach(x=>x.classList.remove("active"));document.getElementById("s"+n).classList.add("active");scrollTo(0,0)}
+function kiss(){let z=document.getElementById("zone");for(let i=0;i<18;i++){let e=document.createElement("span");e.className="kiss";e.textContent=Math.random()>.25?"💋":"❤️";e.style.left=Math.random()*90+"%";e.style.top="60%";e.style.animationDelay=Math.random()+"s";z.appendChild(e);setTimeout(()=>e.remove(),3000)}}
+</script></body></html>
